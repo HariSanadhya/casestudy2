@@ -1,5 +1,6 @@
 #install.packages ('doBy')
 library(doBy)
+library(ggplot2)
 Orange
 require(stats); require(graphics)
 coplot(circumference ~ age | Tree, data = Orange, show.given = FALSE)
@@ -12,4 +13,6 @@ plot(circumference ~ age, data = Orange, subset = Tree == 3,
 age <- seq(0, 1600, length.out = 101)
 lines(age, predict(fm1, list(age = age)))
 
-summaryBy(Orange$circumference  ~ Orange$Tree, data=Orange , FUN=c(mean),na.rm=TRUE,keep.names=TRUE)
+summaryBy(Orange$circumference  ~ Orange$Tree, data=Orange , FUN=c(mean,median),na.rm=TRUE,keep.names=TRUE)
+
+ggplot(Orange, aes(x = Orange$age, y = Orange$circumference, shape = Orange$Tree)) + geom_point(size = 5)
