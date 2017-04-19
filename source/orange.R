@@ -19,9 +19,10 @@ fill <- "#4271AE"
 line <- "#1F3552"
 
 # Plotting sizes versus different trees.
-ggplot(Orange, aes(x = age, y = circumference, shape=factor(Tree), color = factor(Tree))) + geom_point(size = 5)
+ggplot(Orange, aes(x = age, y = circumference, shape=factor(Tree), color = factor(Tree))) + geom_point(size = 5) +
+  ggtitle("Scatter plot of circumference vs age") + theme(plot.title = element_text(hjust = 0.5))
 
 # Generate box plot of circumference by tree.
 ggplot(Orange, aes(x = Tree, y = circumference)) + geom_boxplot(fill = fill, colour = line, alpha = .7) + 
   scale_x_discrete(name = "Tree #") + scale_y_continuous(name = "Circumference in inches") +
-  ggtitle("Boxplot of circumference by tree")
+  ggtitle("Boxplot of circumference by tree") + theme(plot.title = element_text(hjust = 0.5))
