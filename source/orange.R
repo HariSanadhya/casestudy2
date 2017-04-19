@@ -18,6 +18,7 @@ Orange$Tree <- factor(Orange$Tree, labels = c("1", "2", "3", "4", "5"))
 fill <- "#4271AE"
 line <- "#1F3552"
 
+# Plotting sizes versus different trees.
 ggplot(Orange, aes(x = age, y = circumference, shape=factor(Tree), color = factor(Tree))) + geom_point(size = 5)
 
 # Generate box plot of circumference by tree.
