@@ -18,6 +18,8 @@ Orange$Tree <- factor(Orange$Tree, labels = c("1", "2", "3", "4", "5"))
 fill <- "#4271AE"
 line <- "#1F3552"
 
+ggplot(Orange, aes(x = age, y = circumference, shape=factor(Tree), color = factor(Tree))) + geom_point(size = 5)
+
 # Generate box plot of circumference by tree.
 ggplot(Orange, aes(x = Tree, y = circumference)) + geom_boxplot(fill = fill, colour = line, alpha = .7) + 
   scale_x_discrete(name = "Tree #") + scale_y_continuous(name = "Circumference in inches") +
