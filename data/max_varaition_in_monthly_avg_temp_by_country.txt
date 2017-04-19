@@ -1,0 +1,242 @@
+Country	Maximum.variation.in.monthly.avg.temp.since.1900
+Kazakhstan	49.163
+Mongolia	48.01
+Russia	46.682
+Canada	43.532
+Uzbekistan	42.698
+Turkmenistan	40.579
+Belarus	39.338
+Finland	39.068
+Estonia	38.815
+Ukraine	38.66
+Kyrgyzstan	38.436
+North Korea	38.342
+Latvia	38.063
+Moldova	38.012
+Greenland	37.516
+Denmark	37.138
+Lithuania	36.97
+Tajikistan	35.829
+Poland	35.616
+Armenia	35.273
+Romania	34.912
+Hungary	34.753
+South Korea	34.3
+Slovakia	33.833
+Sweden	33.732
+Czech Republic	33.708
+Iraq	33.563
+Afghanistan	33.086
+Asia	32.957
+Serbia	32.877
+Azerbaijan	32.665
+China	32.255
+North America	32.063
+Bulgaria	31.966
+Iran	31.666
+Germany	31.641
+Georgia	31.383
+Croatia	31.314
+Slovenia	31.179
+Austria	31.158
+Kuwait	30.771
+Montenegro	30.756
+Macedonia	30.71
+Bosnia And Herzegovina	30.567
+Liechtenstein	30.444
+Syria	30.378
+Luxembourg	30.317
+Turkey	30.22
+Switzerland	29.895
+United States	29.745
+Saint Pierre And Miquelon	29.433
+Belgium	28.916
+Japan	28.901
+Svalbard And Jan Mayen	28.676
+Europe	28.131
+Monaco	28.12
+Denmark (Europe)	27.997
+Netherlands (Europe)	27.889
+San Marino	27.537
+Albania	27.523
+Netherlands	27.354
+Norway	27.334
+France (Europe)	26.64
+Italy	26.263
+Algeria	26.238
+Greece	25.853
+Jordan	25.415
+Bahrain	25.311
+Pakistan	25.274
+Tunisia	25.111
+Andorra	24.674
+Saudi Arabia	23.736
+Qatar	23.715
+Lebanon	23.548
+Libya	23.476
+Spain	23.06
+Gaza Strip	22.47
+France	22.06
+United Arab Emirates	22.014
+Cyprus	21.728
+Israel	21.71
+Egypt	21.64
+Morocco	21.437
+Iceland	20.832
+Nepal	20.122
+United Kingdom (Europe)	19.362
+Portugal	19.134
+Guernsey	19.008
+Jersey	19.008
+Macau	18.982
+Malta	18.766
+Niger	18.758
+Argentina	18.494
+Hong Kong	18.01
+United Kingdom	17.831
+Isle Of Man	17.798
+Uruguay	17.631
+Oman	17.533
+Mauritania	17.43
+Ireland	17.362
+Bhutan	17.347
+Australia	17.29
+Lesotho	16.718
+Botswana	16.286
+Mali	16.207
+Taiwan	16.169
+Oceania	16.143
+Western Sahara	15.845
+South Africa	15.815
+India	15.7
+Paraguay	15.485
+Chad	15.316
+New Zealand	13.91
+Yemen	13.809
+Namibia	13.598
+Swaziland	13.415
+Bangladesh	13.337
+Mexico	13.318
+Sudan	13.09
+Faroe Islands	12.68
+Zimbabwe	12.522
+South Georgia And The South Sandwich Isla	12.398
+Laos	12.385
+Djibouti	12.152
+Chile	12.104
+Vietnam	11.901
+Burma	11.245
+Bahamas	10.799
+Zambia	10.759
+Burkina Faso	10.739
+Falkland Islands (Islas Malvinas)	10.68
+Senegal	10.452
+Malawi	10.336
+Thailand	10.171
+Eritrea	10.146
+French Southern And Antarctic Lands	9.983
+Mozambique	9.884
+Nigeria	9.538
+Gambia	9.171
+New Caledonia	8.938
+Bolivia	8.631
+Cambodia	8.534
+Madagascar	8.476
+Cuba	8.356
+Belize	8.316
+Cape Verde	8.314
+Mauritius	8.299
+Cayman Islands	8.067
+Turks And Caicas Islands	8.059
+Tonga	7.966
+Heard Island And Mcdonald Islands	7.946
+Angola	7.943
+Reunion	7.809
+Benin	7.706
+Honduras	7.552
+Guatemala	7.481
+Palestina	7.423
+Africa	7.332
+Central African Republic	7.273
+Guinea Bissau	7.156
+Ghana	7.151
+Guinea	7.118
+Togo	7.062
+Côte D'Ivoire	6.772
+South America	6.765
+Niue	6.708
+Haiti	6.63
+Dominican Republic	6.438
+Aruba	6.333
+Nicaragua	6.321
+Puerto Rico	6.249
+Fiji	6.214
+Curaçao	6.125
+Ethiopia	6.12
+Gabon	6.06
+Equatorial Guinea	6.055
+El Salvador	6.047
+Bonaire, Saint Eustatius And Saba	6.017
+Comoros	5.963
+Anguilla	5.897
+Saint Barthélemy	5.897
+Saint Martin	5.897
+Sint Maarten	5.897
+Kenya	5.895
+Somalia	5.874
+Tanzania	5.872
+Cameroon	5.87
+Sierra Leone	5.838
+Costa Rica	5.834
+British Virgin Islands	5.826
+Virgin Islands	5.826
+Antigua And Barbuda	5.763
+Jamaica	5.726
+Montserrat	5.721
+Philippines	5.708
+Guadeloupe	5.651
+Saint Kitts And Nevis	5.613
+Liberia	5.472
+Timor Leste	5.461
+Dominica	5.446
+Martinique	5.446
+Uganda	5.372
+Mayotte	5.366
+Brazil	5.354
+Peru	5.235
+Sao Tome And Principe	5.216
+Sri Lanka	5.125
+Saint Lucia	5.048
+Saint Vincent And The Grenadines	5.021
+Congo	4.945
+Barbados	4.934
+Panama	4.905
+French Polynesia	4.881
+Burundi	4.873
+Singapore	4.757
+Malaysia	4.691
+Rwanda	4.651
+Grenada	4.645
+Trinidad And Tobago	4.593
+Ecuador	4.567
+Venezuela	4.477
+Congo (Democratic Republic Of The)	4.466
+Suriname	4.435
+Kiribati	4.425
+French Guiana	4.401
+Baker Island	4.298
+Seychelles	4.25
+Papua New Guinea	4.15
+Guam	4.108
+Northern Mariana Islands	4.108
+Christmas Island	4.098
+Guyana	3.992
+Kingman Reef	3.839
+Palmyra Atoll	3.835
+American Samoa	3.831
+Colombia	3.811
+Samoa	3.808
+Palau	3.469
+Solomon Islands	3.391
+Federated States Of Micronesia	2.976
+Indonesia	2.914

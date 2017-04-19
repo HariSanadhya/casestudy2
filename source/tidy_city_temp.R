@@ -1,3 +1,10 @@
+# Install packages lubridate and dplyr which will be used in the data cleansing process
+# To install these packages, uncomment the code lines below
+# install.packages('lubridate')
+# install.packages('dplyr')
+library(lubridate)
+library(dplyr)
+
 # Download the city temperature Data into R
 # Data files are present in the data folder under the R Project
 # citytemp.csv file contains temperature data 
@@ -35,7 +42,6 @@ city_temp <- read.csv(file="data/citytemp.csv",header=T, sep=',')
 
 # On analysing the data, the date is found to be present in 2 formats - %Y-%m-%d and %m/%d/%Y.
 # Using lubridate package, read all the date formats and convert it into %Y-%m-%d format
-library(lubridate)
 city_temp$Date <- as.Date(format(parse_date_time(city_temp$Date, c('Ymd','mdY')),'%Y-%m-%d'))
 summary(city_temp)
 # Convert other columns to proper data types
