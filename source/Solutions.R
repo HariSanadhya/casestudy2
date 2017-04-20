@@ -36,21 +36,24 @@ top_20_temp_diff
 
 # Plot of top 20 countries with maximum monthly average temperature varaition
 q <- qplot(x=top_20_temp_diff$Country, y=top_20_temp_diff$Maximum.variation.in.monthly.avg.temp.since.1900,
-           xlab="Country", ylab="Maximum varaition in monthly average temperature", 
-           main="top 20 countries with maximum average temperature varaition", ylim = c(0,51)) 
-q + theme(axis.text.x = element_text(angle = 90))
+           xlab="Country", ylab="Maximum varaition in monthly average temperature(°C)", 
+           main="Top 20 Countries with Maximum Average Temperature Varaition", ylim = c(0,51)) 
+q <- q + theme(axis.text.x = element_text(angle = 90), plot.title = element_text(hjust = 0.5))
+# display the graph
+q
 # On direct ploting of the data, the x-axis(country) will be ordered alphabetically. To avoid this automatic ordering,
 #  explicitly specify the order of the data and then plot the graph again.
 top_20_temp_diff$Country <- factor(top_20_temp_diff$Country,levels=top_20_temp_diff$Country[order(desc(top_20_temp_diff$Maximum.variation.in.monthly.avg.temp.since.1900))])
 top_20_temp_diff$Country
-q <- qplot(x=top_20_temp_diff$Country,y=top_20_temp_diff$Maximum.variation.in.monthly.avg.temp.since.1900,
-      xlab="Country", ylab="Maximum varaition in monthly average temperature", 
-      main="top 20 countries with maximum average temperature varaition", ylim = c(0,51)) 
-q <- q + theme(axis.text.x = element_text(angle = 90))
-# Save the plot
-ggsave(filename = "graphs/Maximum Temp Variation.png", device="png", plot=q)
+q <- qplot(x=top_20_temp_diff$Country, y=top_20_temp_diff$Maximum.variation.in.monthly.avg.temp.since.1900,
+           xlab="Country", ylab="Maximum varaition in monthly average temperature(°C)", 
+           main="Top 20 Countries with Maximum Average Temperature Varaition", ylim = c(0,51)) 
+q <- q + theme(axis.text.x = element_text(angle = 90), plot.title = element_text(hjust = 0.5))
 # display the graph
 q
+# Save the plot
+ggsave(filename = "graphs/Maximum Temp Variation.png", device="png", plot=q)
+
 
 # Creation of "UStemp” - US land temperatures data from 01/01/1990
 UStemp <- cleaned_temp[as.Date(cleaned_temp$Date)>=as.Date('1900-01-01') & cleaned_temp$Country == 'United States',]
@@ -73,10 +76,12 @@ q <- qplot(x=UStemp_year$Year, y=UStemp_year$Yearly.avg.temp.F, xlab = "Year", y
            main="Average US land temperature by year")
 q <- q + scale_x_continuous(breaks = seq(1900,2017, 13),minor_breaks=NULL)
 q <- q + scale_y_continuous(breaks = seq(45,53,0.5),minor_breaks=NULL, limits=c(45,54))
-# Save the plot
-ggsave(filename = "graphs/Average US land temperature by year.png", device="png", plot=q)
+q <- q + theme(plot.title = element_text(hjust = 0.5))
 # Display the graph
 q
+# Save the plot
+ggsave(filename = "graphs/Average US land temperature by year.png", device="png", plot=q)
+
 
 # Calculation of the one year difference of average land temperature by year
 # For this, create a data frame having first column as the years whose temperature difference is taken (format of 'YYYY - YYYY') and the 
@@ -84,9 +89,37 @@ q
 year_difference_of_temp <- (sapply(1:(length(UStemp_year$Year)-1),function(x){paste(as.character(UStemp_year$Year[x+1]), '-', as.character(UStemp_year$Year[x]))})) %>%
    as.data.frame %>% setNames(c("Years"))
 year_difference_of_temp$temp_diff <- sapply(1:(length(UStemp_year$Yearly.avg.temp.F)-1),function(x){diff(UStemp_year$Yearly.avg.temp.F[x:(x+1)])})
+# Write this data having yearly US average temperature variation by country into the data folder with file 
+#  name as difference_of_average_US_land_temperature_by_year.txt
+write.table(year_difference_of_temp, 'data/difference_of_average_US_land_temperature_by_year.txt', sep = "\t", row.names = FALSE, quote = FALSE)
 
 # maximum difference (value)
 index_of_max_value <- which(year_difference_of_temp$temp_diff == max(abs(year_difference_of_temp$temp_diff)))
 paste('Maximum difference in average US land temperature for two consecutive years is ' , abs(year_difference_of_temp$temp_diff[index_of_max_value]), 
       '°F for year ' , year_difference_of_temp$Years[index_of_max_value], sep='')
+
+# Find the top 20 cities with maximum difference in maximum and minimum temperatures for the period since 1900
+city_temp_since_1900 <- cleaned_city_temp[as.Date(cleaned_city_temp$Date)>=as.Date('1900-01-01'),] 
+top_20_city_temp_diff_since_1900 <- summarize(group_by(city_temp_since_1900, City),  max(Monthly.AverageTemp) - min(Monthly.AverageTemp)) %>%
+  as.data.frame() %>% setNames(c("City","max_and_min_Temp_difference_since_1900")) %>% arrange(desc(max_and_min_Temp_difference_since_1900)) %>% head(n=20)
+# View the data of top 20 cities with maximum differences (difference between maximum and the minimum temperatures) for the period since 1900
+top_20_city_temp_diff_since_1900
+# Plot the top 20 cities 
+q <- qplot(x=top_20_city_temp_diff_since_1900$City,y=top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900,
+           xlab="City", ylab="Difference in Maximum and Minimum Tempeatures since 1900 (°C)", 
+           main="Top 20 Cities with Maximum Average Temperature Variation", ylim = c(0,55)) 
+q <- q + theme(axis.text.x = element_text(angle = 90),plot.title = element_text(hjust = 0.5))
+# display the graph
+q
+# On ploting of the data, the x-axis(City) will be ordered alphabetically. To avoid this automatic ordering,
+#  explicitly specify the order of the data and then plot the graph again.
+top_20_city_temp_diff_since_1900$City <- factor(top_20_city_temp_diff_since_1900$City,levels=top_20_city_temp_diff_since_1900$City[order(desc(top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900))])
+q <- qplot(x=top_20_city_temp_diff_since_1900$City,y=top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900,
+           xlab="City", ylab="Difference in Maximum and Minimum Tempeatures since 1900 (°C)", 
+           main="Top 20 Cities with Maximum Average Temperature Variation", ylim = c(0,55)) 
+q <- q + theme(axis.text.x = element_text(angle = 90),plot.title = element_text(hjust = 0.5))
+# display the graph
+q
+# Save the plot
+ggsave(filename = "graphs/Maximum Temp Variation-City.png", device="png", plot=q)
 
