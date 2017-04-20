@@ -6,11 +6,11 @@ library(ggplot2)
 Orange
 
 # This prints out mean and median which are listed in FUN. This compares circumference by tree.
-summaryBy(Orange$circumference  ~ Orange$Tree, data=Orange , FUN=c(mean,median),na.rm=TRUE,keep.names=TRUE)
+summaryBy(circumference  ~ Tree, data=Orange , FUN=c(mean,median),na.rm=TRUE,keep.names=TRUE)
 
 # This prints out the age vs circumference.
 # TODO: Get plot styles to change for tree.
-ggplot(Orange, aes(x = Orange$age, y = Orange$circumference)) + geom_point(size = 5)
+#ggplot(Orange, aes(x = Orange$age, y = Orange$circumference)) + geom_point(size = 5)
 
 Orange$Tree <- factor(Orange$Tree, labels = c("1", "2", "3", "4", "5"))
 
@@ -18,9 +18,12 @@ Orange$Tree <- factor(Orange$Tree, labels = c("1", "2", "3", "4", "5"))
 fill <- "#4271AE"
 line <- "#1F3552"
 
+#Orange$att<-factor(Orange$Tree)
+
 # Plotting sizes versus different trees.
-ggplot(Orange, aes(x = age, y = circumference, shape=factor(Tree), color = factor(Tree))) + geom_point(size = 5) +
-  ggtitle("Scatter plot of circumference vs age") + theme(plot.title = element_text(hjust = 0.5))
+ggplot(Orange, aes(x = age, y = circumference, shape = factor(Tree), color = factor(Tree))) + geom_point(size = 5) +
+  ggtitle("Scatter plot of circumference vs age") + theme(plot.title = element_text(hjust = 0.5)) +
+  scale_color_discrete(name ="Tree", labels=c("Tree 1","Tree 2","Tree 3","Tree 4","Tree 5")) 
 
 # Generate box plot of circumference by tree.
 ggplot(Orange, aes(x = Tree, y = circumference)) + geom_boxplot(fill = fill, colour = line, alpha = .7) + 
