@@ -64,7 +64,7 @@ ggsave(filename = "graphs/Maximum Temp Variation.png", device="png", plot=q)
 # Display the plot in the markdown file
 ```
 ![](graphs/Maximum Temp Variation.png)
-Based on the above result, it can be said that top 20 courtries based on the Maximum variation in monthly average temperature are having the variation in the range of 35 to 50.
+Based on the above result, it can be said that top 20 courtries based on the Maximum variation in monthly average temperature are having the variation in the range of 35 to 49.
 <br>
 <br>
 <b>Question 2: Select a subset of data called “UStemp” where US land temperatures from 01/01/1990 in Temp data. Use UStemp dataset to answer the followings.(2.a, 2.b and 2.c)</b>
@@ -142,11 +142,12 @@ ggsave(filename = "graphs/Maximum Temp Variation-City.png", device="png", plot=q
 ```
 ![](graphs/Maximum Temp Variation-City.png)
 <br>
-Based on the above result, it can be said that top 20 cities based on the Maximum variation in monthly average temperature are having the variation in the range of around 33 to 47.
+Based on the above result, it can be said that top 20 cities based on the Maximum variation in monthly average temperature are having the variation in the range of around 35 to 53.
 <br>
 <br>
 <b>Question 4: Compare the two graphs in (i) and (iii) and comment it.</b>
-
+On comparison of the two graphs, it can be viewed that the maximum variation in average temperatures for cities are on average higher than the differences in average temperatures for whole cities. 
+Also notice that not all the top 20 countries appear in the top 20 city graph. 9 of the top 20 cities are located in China. Also countries like United states, South Korea, Iran, Germany though not a part of the top 20 countries is having a city in the top 20 city list. This is bacause cities with higher population densities have higher levels of pollution. Also for cities like New York, Chicago, Toronto are there in the list because the cities and countries have the largest difference in average temperatures as they get very very cold in the winter and during summer, though the temperature is not that high, the difference in the two is very high compared to others.
 <br>
 <br>
 <b>Conclusion</b>
