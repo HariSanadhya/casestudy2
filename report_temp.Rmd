@@ -11,7 +11,7 @@ output:
 <b>Introduction</b>
 <br>
 <p>
-
+Given the two datasets, temp and citytemp which contains the monthly average temperature data for various cities and countries around the world.  Given these datasets, perform comparitive average monthly temperature analysis of various countries and cities and also for US land temperatures. 
 </p>
 <br>
 <br>
@@ -153,5 +153,6 @@ Also notice that not all the top 20 countries appear in the top 20 city graph. 9
 <b>Conclusion</b>
 <br>
 <p>
-
+Average yearly US land temperature does not follow any trend in particular with overall indication in rise in temperature. This may be due to the various confounding variables like polulation, pollution, rainfall, urbanization etc. So the relationship between year and average yearly temperature cannot be derived without considering the confounding factors.
+Amongst the top 20 cities based on the maximum variation in the monthly average temperatures, there are many cities belonging to the same country - 9 belong to China, 2 to Russia, 2 to United States and 2 to Canada. Of these though US is not in the top 20 countries, 2 cities from US are in the top 20 cities. This is likely the mean for countries like US where minimum temperature in one part of country is very different then the other part, the average temperature is settled.  
 </p>

@@ -1,5 +1,6 @@
 <b>Introduction</b> <br>
 <p>
+Given the two datasets, temp and citytemp which contains the monthly average temperature data for various cities and countries around the world. Given these datasets, perform comparitive average monthly temperature analysis of various countries and cities and also for US land temperatures.
 </p>
 <br> <br>
 
@@ -293,4 +294,5 @@ ggsave(filename = "graphs/Maximum Temp Variation-City.png", device="png", plot=q
 
 ![](graphs/Maximum%20Temp%20Variation-City.png) <br> Based on the above result, it can be said that top 20 cities based on the Maximum variation in monthly average temperature are having the variation in the range of around 35 to 53. <br> <br> <b>Question 4: Compare the two graphs in (i) and (iii) and comment it.</b> On comparison of the two graphs, it can be viewed that the maximum variation in average temperatures for cities are on average higher than the differences in average temperatures for whole cities. Also notice that not all the top 20 countries appear in the top 20 city graph. 9 of the top 20 cities are located in China. Also countries like United states, South Korea, Iran, Germany though not a part of the top 20 countries is having a city in the top 20 city list. This is bacause cities with higher population densities have higher levels of pollution. Also for cities like New York, Chicago, Toronto are there in the list because the cities and countries have the largest difference in average temperatures as they get very very cold in the winter and during summer, though the temperature is not that high, the difference in the two is very high compared to others. <br> <br> <b>Conclusion</b> <br>
 <p>
+Average yearly US land temperature does not follow any trend in particular with overall indication in rise in temperature. This may be due to the various confounding variables like polulation, pollution, rainfall, urbanization etc. So the relationship between year and average yearly temperature cannot be derived without considering the confounding factors. Amongst the top 20 cities based on the maximum variation in the monthly average temperatures, there are many cities belonging to the same country - 9 belong to China, 2 to Russia, 2 to United States and 2 to Canada. Of these though US is not in the top 20 countries, 2 cities from US are in the top 20 cities. This is likely the mean for countries like US where minimum temperature in one part of country is very different then the other part, the average temperature is settled.
 </p>
