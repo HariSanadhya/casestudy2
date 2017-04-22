@@ -28,7 +28,7 @@ temp_diff <- setNames(temp_diff, c("Country","Maximum.variation.in.monthly.avg.t
 temp_diff <- arrange(temp_diff,desc(Maximum.variation.in.monthly.avg.temp.since.1900))
 # Write this data having maximum monthly average temperature variation by country into the data folder with file 
 #  name as max_monthly_temp_varaition_by_country.txt
-write.table(temp_diff, 'data/max_varaition_in_monthly_avg_temp_by_country.txt', sep = "\t", row.names = FALSE, quote = FALSE)
+write.table(temp_diff, 'data/max_variation_in_monthly_avg_temp_by_country.txt', sep = "\t", row.names = FALSE, quote = FALSE)
 # Retrieve top 20 countries with the maximum differences for the period since 1900
 top_20_temp_diff <- head(temp_diff,n=20) 
 # View the top 20 countries by temp difference
@@ -48,7 +48,7 @@ top_20_temp_diff$Country
 q <- qplot(x=top_20_temp_diff$Country, y=top_20_temp_diff$Maximum.variation.in.monthly.avg.temp.since.1900,
            xlab="Country", ylab="Maximum varaition in monthly average temperature(°C)", 
            main="Top 20 Countries with Maximum Average Temperature Varaition", ylim = c(0,51)) 
-q <- q + theme(axis.text.x = element_text(angle = 90), plot.title = element_text(hjust = 0.5))
+q <- q + theme(axis.text.x = element_text(angle = 90, hjust=1, vjust=0.5), plot.title = element_text(hjust = 0.5))
 # display the graph
 q
 # Save the plot
@@ -67,7 +67,7 @@ head(UStemp)
 UStemp$Monthly.AverageTemp.F <- UStemp$Monthly.AverageTemp * 1.8 + 32
 
 # Calculation of average land temperature by year
-# group the US land temperature data by year and then calculate the average temp for the year
+# Group the US land temperature data by year and then calculate the average temp for the year
 UStemp_year <- group_by(UStemp, as.numeric(format(as.Date(UStemp$Date), '%Y'))) %>%
   summarize(mean(Monthly.AverageTemp.F))
 # Set proper column headings
@@ -100,24 +100,25 @@ paste('Maximum difference in average US land temperature for two consecutive yea
 
 # Find the top 20 cities with maximum difference in maximum and minimum temperatures for the period since 1900
 city_temp_since_1900 <- cleaned_city_temp[as.Date(cleaned_city_temp$Date)>=as.Date('1900-01-01'),] 
-top_20_city_temp_diff_since_1900 <- summarize(group_by(city_temp_since_1900, City),  max(Monthly.AverageTemp) - min(Monthly.AverageTemp)) %>%
-  as.data.frame() %>% setNames(c("City","max_and_min_Temp_difference_since_1900")) %>% arrange(desc(max_and_min_Temp_difference_since_1900)) %>% head(n=20)
+city_temp_since_1900$City <- paste(city_temp_since_1900$City,' (', city_temp_since_1900$Country, ')' , sep='')
+top_20_city_temp_diff_since_1900 <- summarize(group_by(city_temp_since_1900, City,Country),  max(Monthly.AverageTemp) - min(Monthly.AverageTemp)) %>%
+  as.data.frame() %>% setNames(c("City","Country","max_and_min_Temp_difference_since_1900")) %>% arrange(desc(max_and_min_Temp_difference_since_1900)) %>% head(n=20)
 # View the data of top 20 cities with maximum differences (difference between maximum and the minimum temperatures) for the period since 1900
 top_20_city_temp_diff_since_1900
 # Plot the top 20 cities 
 q <- qplot(x=top_20_city_temp_diff_since_1900$City,y=top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900,
            xlab="City", ylab="Difference in Maximum and Minimum Tempeatures since 1900 (°C)", 
            main="Top 20 Cities with Maximum Average Temperature Variation", ylim = c(0,55)) 
-q <- q + theme(axis.text.x = element_text(angle = 90),plot.title = element_text(hjust = 0.5))
+q <- q + theme(axis.text.x = element_text(angle = 90,hjust=1, vjust=0.5),plot.title = element_text(hjust = 0.5))
 # display the graph
 q
 # On ploting of the data, the x-axis(City) will be ordered alphabetically. To avoid this automatic ordering,
 #  explicitly specify the order of the data and then plot the graph again.
 top_20_city_temp_diff_since_1900$City <- factor(top_20_city_temp_diff_since_1900$City,levels=top_20_city_temp_diff_since_1900$City[order(desc(top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900))])
 q <- qplot(x=top_20_city_temp_diff_since_1900$City,y=top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900,
-           xlab="City", ylab="Difference in Maximum and Minimum Tempeatures since 1900 (°C)", 
+           xlab="City (Country)", ylab="Difference in Maximum and Minimum Tempeatures since 1900 (°C)", 
            main="Top 20 Cities with Maximum Average Temperature Variation", ylim = c(0,55)) 
-q <- q + theme(axis.text.x = element_text(angle = 90),plot.title = element_text(hjust = 0.5))
+q <- q + theme(axis.text.x = element_text(angle = 90,hjust=1, vjust=0.5),plot.title = element_text(hjust = 0.5))
 # display the graph
 q
 # Save the plot
