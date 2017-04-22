@@ -1,7 +1,5 @@
 <b>Introduction</b> <br>
 <p>
-THe average monthly temperature variation of a country There are 2 datasets namely Temp.csv and CityTemp.csv, first one having average monthly temperature of the various countries around the world and the second contains the average monthly treperatures of various cities around the world.
-
 </p>
 <br> <br>
 
@@ -130,7 +128,7 @@ ggsave(filename = "graphs/Maximum Temp Variation.png", device="png", plot=q)
 # Display the plot in the markdown file
 ```
 
-![](graphs//Maximum%20Temp%20Variation.png) Based on the above result, it can be said that top 20 courtries based on the Maximum variation in monthly average temperature are having the variation in the range of 35 to 50. <br> <br> <b>Question 2: Select a subset of data called “UStemp” where US land temperatures from 01/01/1990 in Temp data. Use UStemp dataset to answer the followings.(2.a, 2.b and 2.c)</b>
+![](graphs/Maximum%20Temp%20Variation.png) Based on the above result, it can be said that top 20 courtries based on the Maximum variation in monthly average temperature are having the variation in the range of 35 to 50. <br> <br> <b>Question 2: Select a subset of data called “UStemp” where US land temperatures from 01/01/1990 in Temp data. Use UStemp dataset to answer the followings.(2.a, 2.b and 2.c)</b>
 
 ``` r
 # Creation of "UStemp” - US land temperatures data from 01/01/1990
@@ -282,7 +280,7 @@ top_20_city_temp_diff_since_1900
 ``` r
 # To avoid the automatic alphabetic ordering of the data while plotting the City, explicitly specify the order of the data and then plot the graph.
 top_20_city_temp_diff_since_1900$City <- factor(top_20_city_temp_diff_since_1900$City,levels=top_20_city_temp_diff_since_1900$City[order(desc(top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900))])
-q <- qplot(x=top_20_city_temp_diff_since_1900$City,y=top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900, xlab="City (Country)", ylab="Difference in Maximum and Minimum Tempeatures since 1900 (°C)", main="Top 20 Cities with Maximum Average Temperature Variation", ylim = c(0,55)) + theme(axis.text.x = element_text(angle = 90,hjust=1, vjust=0.5),plot.title = element_text(hjust = 0.5))
+q <- qplot(x=top_20_city_temp_diff_since_1900$City,y=top_20_city_temp_diff_since_1900$max_and_min_Temp_difference_since_1900, xlab="City (Country)", ylab="Maximum Tempeature variation since 1900 (°C)", main="Top 20 Cities with Maximum Average Temperature Variation", ylim = c(0,55)) + theme(axis.text.x = element_text(angle = 90,hjust=1, vjust=0.5),plot.title = element_text(hjust = 0.5))
 # Save the plot
 ggsave(filename = "graphs/Maximum Temp Variation-City.png", device="png", plot=q)
 ```
@@ -297,7 +295,4 @@ ggsave(filename = "graphs/Maximum Temp Variation-City.png", device="png", plot=q
 
 <br> <br> <b>Conclusion</b> <br>
 <p>
-In this study, we have tried to examine the relationship between the trunk circumference of the Orange tree with its age. The study incorporates visual tools to examine this relationship.
-
-The conclusion drawn from the visual inspection of the data is as below: - During the initial days of the tree, the groth rate is high but as the days pass, the growth rate of the tree decreases and reach to almost zero by the time its fully grown. All the 5 Orange trees shows the similar behaviour. Aroung tree age of 1400 days, the growth rate reaches the almost zero point. So it can be said that the Orange tree is fully grown within a period of around 1400 days.
 </p>
