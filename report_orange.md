@@ -92,7 +92,7 @@ ggsave(filename = "graphs/Scatter plot of circumference vs age.png", device="png
 # Display the plot in the markdown file
 ```
 
-![](graphs/%22Scatter%20plot%20of%20circumference%20vs%20age.png%22) <br> Looking at the graph, it can be said that for all the trees, the circumference was increasing during the initial days but after around 1400 days, the rate of increase in circumference dropped significantly to almost zero suggesting the Orange tree is fully grown by around 1400 days of age.
+![](graphs/Scatter%20plot%20of%20circumference%20vs%20age.png) <br> Looking at the graph, it can be said that for all the trees, the circumference was increasing during the initial days but after around 1400 days, the rate of increase in circumference dropped significantly to almost zero suggesting the Orange tree is fully grown by around 1400 days of age.
 <br> <br> <b>Question 3: Display the trunk circumferences on a comparative boxplot against tree. Be sure you order the boxplots in the increasing order of maximum diameter.</b>
 
 ``` r
@@ -109,7 +109,7 @@ ggsave(filename = "graphs/Boxplot of circumference by tree.png", device="png", p
 # Display the plot in the markdown file
 ```
 
-![](graphs/%22Boxplot%20of%20circumference%20by%20tree.png%22) <br> Boxplot analysis shows that since the median of the circumference is not in the center but is closed towards the top with lower hinge of larger length then the upper hinge suggesting that the circumference on the orange tree increases which a large rate during the initial days but with time, the growth rate of the tree decreases. <br> <br> <b>Conclusion</b> <br>
+![](graphs/Boxplot%20of%20circumference%20by%20tree.png) <br> Boxplot analysis shows that since the median of the circumference is not in the center but is closed towards the top with lower hinge of larger length then the upper hinge suggesting that the circumference on the orange tree increases which a large rate during the initial days but with time, the growth rate of the tree decreases. <br> <br> <b>Conclusion</b> <br>
 <p>
 In this study, we have tried to examine the relationship between the trunk circumference of the Orange tree with its age. The study incorporates visual tools to examine this relationship.
 
